@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --main-color: #8ca5ea;
+  --error-color: #ff0000;
+}
+
+body {
+  color: var(--black-color);
+  background-color: var(--white-color);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.error {
+  color: var(--error-color);
+}

@@ -1,0 +1,12 @@
+@if (loading()) {
+<p>Loading...</p>
+} @if (error()) {
+<p class="error">{{ error() }}</p>
+}
+<ul>
+  @for (t of transactions(); track t._id) {
+  <li>
+    <b>{{ t.type }}</b> — {{ t.amount }}
+  </li>
+  }
+</ul>

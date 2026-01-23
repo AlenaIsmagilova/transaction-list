@@ -1,0 +1,13 @@
+<ul class="list">
+  @for (menuItem of HEADER_MENU; track menuItem.id) {
+  <li>
+    <a
+      class="title"
+      [routerLink]="menuItem.path"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active"
+      >{{ menuItem.title }}</a
+    >
+  </li>
+  }
+</ul>
