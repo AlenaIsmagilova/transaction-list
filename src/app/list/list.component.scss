@@ -1,0 +1,116 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: var(--white-color);
+  color: var(--dark-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 120ms ease, border-color 120ms ease,
+    transform 120ms ease;
+}
+
+.nav a:hover {
+  background: var(--white-border);
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+}
+
+.nav a.active {
+  background: var(--dark-color);
+  border-color: var(--dark-color);
+  color: var(--white-color);
+}
+
+.loading {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  background: var(--white-border);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  color: var(--dark-color);
+}
+
+.error {
+  padding: 10px 12px;
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+  color: var(--error-color);
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+ul.transactions {
+  max-height: calc(100dvh - 180px);
+  overflow: auto;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+ul.transactions li {
+  display: grid;
+  grid-template-columns: 1fr minmax(90px, 140px);
+  gap: 12px;
+  align-items: center;
+
+  padding: 12px 14px;
+  border: 1px solid var(--light-border);
+  border-radius: 12px;
+  background: var(--white-color);
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.03);
+}
+
+ul.transactions::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+ul.transactions::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+ul.transactions::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+ul.transactions::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hovered-border-color);
+}
+
+ul.transactions::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.t-name {
+  font-weight: 700;
+  color: var(--dark-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.t-amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--dark-color);
+}

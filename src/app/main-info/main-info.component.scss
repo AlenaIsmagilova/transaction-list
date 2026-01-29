@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainWrapper {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.container {
+  width: 150px;
+  height: 130px;
+  border-radius: 12px;
+  border: 1px solid var(--main-color);
+  padding: 8px;
+  box-sizing: border-box;
+}

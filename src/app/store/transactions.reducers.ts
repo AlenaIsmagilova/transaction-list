@@ -21,11 +21,9 @@ export const initialState: ITransactionsState = {
 export const transactionsReducer = createReducer(
   initialState,
 
-  on(TransactionsActions.loadTransactions, (state) => ({
-    ...state,
-    loading: true,
-    error: null,
-  })),
+  on(TransactionsActions.loadTransactions, (state) =>
+    state.loaded ? state : { ...state, loading: true, error: null }
+  ),
 
   on(
     TransactionsActions.setTransactionTypes,

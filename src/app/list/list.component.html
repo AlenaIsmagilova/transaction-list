@@ -1,12 +1,24 @@
 @if (loading()) {
-<p>Loading...</p>
+<p class="loading">Загружаю...</p>
 } @if (error()) {
 <p class="error">{{ error() }}</p>
 }
-<ul>
-  @for (t of transactions(); track t._id) {
+<nav class="nav">
+  @for (type of transactionTypes(); track $index) {
+  <a
+    [routerLink]="'/list'"
+    [routerLinkActiveOptions]="{ exact: true }"
+    routerLinkActive="active"
+    [queryParams]="{type}"
+    >{{ type }}</a
+  >
+  }
+</nav>
+<ul class="transactions">
+  @for (t of filteredTransactions(); track t._id) {
   <li>
-    <b>{{ t.type }}</b> — {{ t.amount }}
+    <span class="t-name">{{ t.name.first }} {{ t.name.last }}</span>
+    <span class="t-amount">{{ t.amount }}</span>
   </li>
   }
 </ul>

@@ -3,6 +3,11 @@
   --white-color: #ffffff;
   --main-color: #8ca5ea;
   --error-color: #ff0000;
+  --border-color: #5e82e6;
+  --hovered-border-color: #5e82e680;
+  --light-border: #e5e7eb;
+  --dark-color: #111827;
+  --white-border: #f9fafb;
 }
 
 body {
@@ -16,4 +21,19 @@ body {
 
 .error {
   color: var(--error-color);
+}
+
+button {
+  background-color: var(--main-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 6px;
+  box-sizing: border-box;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--hovered-border-color);
 }

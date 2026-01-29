@@ -1,2 +1,14 @@
-<button type="button" [routerLink]="'/list'">See transactions</button>
-<p>You have transactions</p>
+<div class="mainWrapper">
+  <p class="title">You have {{ transactions().length }} transactions</p>
+  <button type="button" [routerLink]="'/list'">See transactions</button>
+</div>
+
+<div class="wrapper">
+  @for (type of transactionTypes(); track $index) {
+  <div class="container">
+    <p>{{ countOfTransactions(type) }}</p>
+    <p>{{ type }}</p>
+    <button [routerLink]="'/list'" [queryParams]="{type}">See all</button>
+  </div>
+  }
+</div>
